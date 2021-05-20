@@ -23,6 +23,7 @@ export const ComposeScreen = () => {
       style={styles.container}
     >
       <TextInput
+        accesibilityLabel={ 'Memo Text' }
         style={{ marginBottom: 16 }}
         mode="outlined"
         placeholder="メモを入力してください"
@@ -30,6 +31,7 @@ export const ComposeScreen = () => {
         onChangeText={(text) => setText(text)}
       />
       <Button
+        accesibilityLabel={ 'Memo Submit Button' }
         mode="contained"
         onPress={onPressSave}
       >

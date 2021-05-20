@@ -28,11 +28,13 @@ export const MainScreen = () => {
   return (
     <View style={styles.container}>
       <FlatList
+        accesibilityLabel={ 'Memo List' }
         style={styles.list}
-        data={memos} // (1)
-        keyExtractor={item => `${item.createdAt}`} // (2)
-        renderItem={({ item }) => ( // (3)
-          <List.Item // (4)
+        data={memos}
+        keyExtractor={item => `${item.createdAt}`}
+        renderItem={({ item }) => (
+          <List.Item
+            accesibilityLabel={ 'Memo Item' }
             title={item.text}
             titleNumberOfLines={5}
             description={`作成日時: ${format(item.createdAt, 'yyyy.MM.dd HH:mm')}`}
@@ -41,6 +43,7 @@ export const MainScreen = () => {
         )}
       />
       <FAB
+        accesibilityLabel={ 'Add Memo Button' }
         style={{
           position: 'absolute',
           right: 16,
